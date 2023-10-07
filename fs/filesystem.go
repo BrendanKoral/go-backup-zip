@@ -85,3 +85,13 @@ func addFileToZip(f string, d string, w *zip.Writer) {
 		log.Fatal(err)
 	}
 }
+
+func DeleteFilesInDir(d string) {
+	err := os.RemoveAll(d)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Printf("Directory %s deleted successfully", d)
+}

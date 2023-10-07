@@ -27,6 +27,12 @@ func main() {
 	for val := range ch {
 		log.Println(val)
 	}
+
+	for _, c := range fs.C {
+		fs.DeleteFilesInDir(c.Backup)
+	}
+
+	log.Println("Zip backups program completed successfully")
 }
 
 func init() {
